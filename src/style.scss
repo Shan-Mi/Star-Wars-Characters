@@ -1,14 +1,24 @@
 /* General */
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@400;700&display=swap');
 
 html {
   font-family: 'Raleway', sans-serif;
   background-color: yellow;
   font-size: 10px;
+  background: top / cover no-repeat url(https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80);
+  background-attachment: fixed;
 }
 
 body {
-  width: 800px;
+  width: 90%;
   margin: 0 auto;
+  padding-top: 5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 /* Typography */
@@ -22,18 +32,18 @@ h2 {
 
 h1 {
   font-size: 5rem;
-  background: url(icons/bean_can.png) no-repeat 20% center, url(icons/bean_can.png) no-repeat 80% center;
+  /* background: url(icons/bean_can.png) no-repeat 20% center, url(icons/bean_can.png) no-repeat 80% center; */
   background-size: 48px 48px;
 }
 
 h2 {
   font-size: 2rem;
   color: yellow;
-  text-align: right;
-  width: 160px;
-  position: absolute;
-  right: 4%;
-  z-index: 3000;
+  text-align: center;
+  // width: 160px;
+  // position: absolute;
+  // right: 4%;
+  // z-index: 3000;
   text-shadow: 2px 2px 1px black;
   line-height: 2rem;
   padding-top: 0.3rem;
@@ -83,11 +93,11 @@ footer {
 }
 
 aside {
-  flex: 3;
+  flex: 2;
 }
 
 main {
-  flex: 7;
+  flex: 8;
 }
 
 /* Form styling */
@@ -174,17 +184,80 @@ section p {
   z-index: 2000;
 }
 
-.vegetables {
-  background: black url(icons/vegetable.png) no-repeat 2px 2px;
-  background-size: 24px 24px;
+#sw-panel {
+  .characters-wrapper {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    grid-auto-rows: 150px;
+    width: 100%;
+
+    .character {
+      border: 1px solid black;
+      text-align: center;
+      min-width: 150px;
+      // width: max-content;
+      background: rgba(245, 245, 245, 0.80);
+      border-radius: 5px;
+      display: grid;
+      grid-template-rows: 1fr 1.5fr;
+
+      .name-container {
+        place-self: center;
+
+        &:hover::after {
+          content: 'click to show more info';
+          // position: absolute;
+        }
+      }
+
+      .info-container {
+        align-items: center;
+        position: relative;
+
+        &.hidden {
+          &::before {
+            content: 'click to show more info';
+            position: absolute;
+            top: 50%
+          }
+        }
+      }
+    }
+  }
 }
 
-.meat {
-  background: black url(icons/meat.png) no-repeat 2px 2px;
-  background-size: 24px 24px;
+.sticky-wrapper {
+  position: sticky;
+  top: 10px;
 }
 
-.soup {
-  background: black url(icons/soup.png) no-repeat 2px 2px;
-  background-size: 24px 24px;
+a {
+  display: inline-block;
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.showInfo {
+  color: #333;
+  width: 100%;
+
+  &:hover {
+    transform: scale(1.2);
+    color: lightcoral;
+  }
+}
+
+.date {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #1e1e17;
+  font-weight: bold;
 }
