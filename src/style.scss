@@ -1,5 +1,6 @@
 /* General */
 @import url('https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
 
 html {
   font-family: 'Raleway', sans-serif;
@@ -32,7 +33,6 @@ h2 {
 
 h1 {
   font-size: 5rem;
-  /* background: url(icons/bean_can.png) no-repeat 20% center, url(icons/bean_can.png) no-repeat 80% center; */
   background-size: 48px 48px;
 }
 
@@ -40,10 +40,6 @@ h2 {
   font-size: 2rem;
   color: yellow;
   text-align: center;
-  // width: 160px;
-  // position: absolute;
-  // right: 4%;
-  // z-index: 3000;
   text-shadow: 2px 2px 1px black;
   line-height: 2rem;
   padding-top: 0.3rem;
@@ -193,27 +189,46 @@ section p {
     width: 100%;
 
     .character {
+      background: url(https://source.unsplash.com/200x200/?star%20wars) rgba(245, 245, 245, 0.80);
       border: 1px solid black;
       text-align: center;
       min-width: 150px;
-      // width: max-content;
-      background: rgba(245, 245, 245, 0.80);
+      overflow: hidden;
       border-radius: 5px;
       display: grid;
       grid-template-rows: 1fr 1.5fr;
 
       .name-container {
         place-self: center;
+        background: #9FBECF;
+        border-radius: 3px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         &:hover::after {
           content: 'click to show more info';
-          // position: absolute;
+        }
+
+        .name {
+          color: white;
+          font-size: 14px;
+          font-family: 'Poller One', cursive;
         }
       }
 
       .info-container {
         align-items: center;
         position: relative;
+        height: 100%;
+        width: 100%;
+        background: #BBBEB1;
+        color: #ccc;
+        font-size: 10px;
+        padding-top: 10px;
 
         &.hidden {
           &::before {

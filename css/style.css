@@ -1,5 +1,6 @@
 /* General */
 @import url("https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poller+One&display=swap");
 html {
   font-family: 'Raleway', sans-serif;
   background-color: yellow;
@@ -31,7 +32,6 @@ h2 {
 
 h1 {
   font-size: 5rem;
-  /* background: url(icons/bean_can.png) no-repeat 20% center, url(icons/bean_can.png) no-repeat 80% center; */
   background-size: 48px 48px;
 }
 
@@ -207,10 +207,11 @@ section p {
 }
 
 #sw-panel .characters-wrapper .character {
+  background: url(https://source.unsplash.com/200x200/?star%20wars) rgba(245, 245, 245, 0.8);
   border: 1px solid black;
   text-align: center;
   min-width: 150px;
-  background: rgba(245, 245, 245, 0.8);
+  overflow: hidden;
   border-radius: 5px;
   display: -ms-grid;
   display: grid;
@@ -220,10 +221,33 @@ section p {
 
 #sw-panel .characters-wrapper .character .name-container {
   place-self: center;
+  background: #9FBECF;
+  border-radius: 3px;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #sw-panel .characters-wrapper .character .name-container:hover::after {
   content: 'click to show more info';
+}
+
+#sw-panel .characters-wrapper .character .name-container .name {
+  color: white;
+  font-size: 14px;
+  font-family: 'Poller One', cursive;
 }
 
 #sw-panel .characters-wrapper .character .info-container {
@@ -231,6 +255,12 @@ section p {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  height: 100%;
+  width: 100%;
+  background: #BBBEB1;
+  color: #ccc;
+  font-size: 10px;
+  padding-top: 10px;
 }
 
 #sw-panel .characters-wrapper .character .info-container.hidden::before {
