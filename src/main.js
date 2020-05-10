@@ -57,12 +57,12 @@ swPanel.addEventListener('click', (e) => {
 
 document.querySelector('.date').innerHTML = new Date();
 
-function generateCharatersPanel(charater) {
+function generateCharatersPanel(character) {
   let films = '';
   let gender;
   let hrefLink;
 
-  charater.films.map(film => {
+  character.films.map(film => {
     switch (film.slice(-2, -1)) {
       case '1':
         hrefLink = 'https://en.wikipedia.org/wiki/Star_Wars:_Episode_I_%E2%80%93_The_Phantom_Menace';
@@ -85,17 +85,17 @@ function generateCharatersPanel(charater) {
     }
     return films += `<a href='${hrefLink}'>${film}</a>`
   })
-  gender = charater.gender.replace(/\//, '');
+  gender = character.gender.replace(/\//, '');
 
   charactersArea.innerHTML += `
     <div data-id="${id}" class="character">
       <div class="name-container ${gender}">
-        <a class='showInfo'><p class="name" data-id="${id}">${charater.name}</p></a>
+        <a class='showInfo'><p class="name" data-id="${id}">${character.name}</p></a>
       </div>
       <div class="info-container hidden" data-info="${id}">
         ${films} 
-        <p class="text"><b>Hair Color</b>: ${charater.hair_color}</p>
-        <p class="text"><b>Eye Color</b>: ${charater.eye_color}</p>
+        <p class="text"><b>Hair Color</b>: ${character.hair_color}</p>
+        <p class="text"><b>Eye Color</b>: ${character.eye_color}</p>
       </div>
     </div>
     `
