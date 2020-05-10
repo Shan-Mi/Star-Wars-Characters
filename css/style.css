@@ -20,6 +20,8 @@ body {
 *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Typography */
@@ -139,7 +141,7 @@ input {
   color: yellow;
   border: none;
   padding: 5px;
-  width: 201.5px;
+  width: 200px;
 }
 
 button {
@@ -193,7 +195,7 @@ section p {
   position: absolute;
   right: 10px;
   bottom: -6px;
-  z-index: 2000;
+  z-index: 2;
 }
 
 #sw-panel .characters-wrapper {
@@ -221,7 +223,6 @@ section p {
 
 #sw-panel .characters-wrapper .character .name-container {
   place-self: center;
-  background: #9FBECF;
   border-radius: 3px;
   height: 100%;
   width: 100%;
@@ -259,7 +260,7 @@ section p {
   width: 100%;
   background: #BBBEB1;
   color: #ccc;
-  font-size: 10px;
+  font-size: 11px;
   padding-top: 10px;
 }
 
@@ -293,11 +294,11 @@ button:hover {
   width: 100%;
 }
 
-.showInfo:hover {
+.showInfo .name:hover {
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
           transform: scale(1.2);
-  color: lightcoral;
+  color: lightcoral !important;
 }
 
 .date {
@@ -305,5 +306,38 @@ button:hover {
   font-size: 1.5rem;
   color: #1e1e17;
   font-weight: bold;
+}
+
+.male {
+  background-color: #242A45;
+}
+
+.female {
+  background-color: #e55039;
+}
+
+.na {
+  background-color: #fad390;
+}
+
+.hermaphrodite {
+  background-color: #aaa69d;
+}
+
+.none {
+  background: #9FBECF;
+}
+
+.text {
+  color: #333;
+  font-size: 11px;
+}
+
+.text:nth-of-type(1) {
+  margin-top: 5px;
+}
+
+.colorDemonstration > * {
+  margin-top: 10px;
 }
 /*# sourceMappingURL=style.css.map */

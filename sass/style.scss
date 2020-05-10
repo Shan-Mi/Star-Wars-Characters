@@ -2,6 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
 
+
+$maleColor: #242A45;
+$femaleColor: #e55039;
+$naColor: #fad390;
+$hermaphroditeColor: #aaa69d;
+
+
 html {
   font-family: 'Raleway', sans-serif;
   background-color: yellow;
@@ -20,6 +27,8 @@ body {
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Typography */
@@ -44,8 +53,6 @@ h2 {
   line-height: 2rem;
   padding-top: 0.3rem;
 }
-
-
 
 p,
 label,
@@ -130,7 +137,7 @@ input {
   color: yellow;
   border: none;
   padding: 5px;
-  width: 201.5px;
+  width: 200px;
 }
 
 button {
@@ -177,7 +184,7 @@ section p {
   position: absolute;
   right: 10px;
   bottom: -6px;
-  z-index: 2000;
+  z-index: 2;
 }
 
 #sw-panel {
@@ -200,7 +207,7 @@ section p {
 
       .name-container {
         place-self: center;
-        background: #9FBECF;
+        // background: #9FBECF;
         border-radius: 3px;
         height: 100%;
         width: 100%;
@@ -227,14 +234,14 @@ section p {
         width: 100%;
         background: #BBBEB1;
         color: #ccc;
-        font-size: 10px;
+        font-size: 11px;
         padding-top: 10px;
 
         &.hidden {
           &::before {
             content: 'click to show more info';
             position: absolute;
-            top: 50%
+            top: 50%;
           }
         }
       }
@@ -264,9 +271,9 @@ button:hover {
   color: #333;
   width: 100%;
 
-  &:hover {
+  .name:hover {
     transform: scale(1.2);
-    color: lightcoral;
+    color: lightcoral !important;
   }
 }
 
@@ -275,4 +282,37 @@ button:hover {
   font-size: 1.5rem;
   color: #1e1e17;
   font-weight: bold;
+}
+
+.male {
+  background-color: $maleColor;
+}
+
+.female {
+  background-color: $femaleColor;
+}
+
+.na {
+  background-color: $naColor;
+}
+
+.hermaphrodite {
+  background-color: $hermaphroditeColor;
+}
+
+.none {
+  background: #9FBECF;
+}
+
+.text {
+  color: #333;
+  font-size: 11px;
+
+  &:nth-of-type(1) {
+    margin-top: 5px;
+  }
+}
+
+.colorDemonstration>* {
+  margin-top: 10px;
 }
