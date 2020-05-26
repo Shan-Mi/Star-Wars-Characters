@@ -5,45 +5,51 @@ const charactersArea = document.querySelector(".characters-wrapper");
 const searchTermArea = document.querySelector("#searchTerm");
 let id = 0;
 let characters,
+  i = 1,
   charactersJson,
   results = [];
 
-(async () => {
-  for (let i = 1; i <= totalPage; i++) {
-    try {
-      const res = await fetch(`${rootURL}${i}`);
-      charactersJson = await res.json();
-      characters = await charactersJson.results;
-      results.push(characters);
-      results = results.flat();
-    } catch (err) {
-      console.log(err);
+const getCharacters = async () => {
+  let isThisEnd = false;
+  try {
+    const res = await fetch(`${rootURL}${i}`);
+    charactersJson = await res.json();
+    // console.log(charactersJson.next);
+    characters = await charactersJson.results;
+    results.push(characters);
+    results = results.flat();
+    if (charactersJson.next) {
+      i++;
+      getCharacters();
     }
+    if (!charactersJson.next) {
+      console.log("dead end");
+      isThisEnd = true;
+    }
+  } catch (err) {
+    console.log(err);
   }
-  console.log(results);
-  drawCharacterArea(results);
-})();
 
-// const flatten = (arr) =>
-//   arr.reduce((a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []);
-
-// getCharacters();
-// console.log(results);
-// drawCharacterArea(results);
+  console.log(i);
+  if (isThisEnd) {
+    drawCharacterArea(results);
+  }
+};
+getCharacters();
+console.log(results);
 
 function drawCharacterArea(results) {
   results.forEach((result) => {
     generateCharatersPanel(result);
-    // console.log("why not draw");
   });
-  searchBtn.addEventListener('keyup', e =>{
-    const searchString = e.target.value.toLowerCase()
+  searchBtn.addEventListener("keyup", (e) => {
+    const searchString = e.target.value.toLowerCase();
 
-    const searchResults = results.filter(result =>
+    const searchResults = results.filter((result) =>
       result.name.toLowerCase().includes(searchString)
-    )
-    showSelectCharactor(searchResults)
-  })
+    );
+    showSelectCharactor(searchResults);
+  });
   // searchBtn.onclick = showSelectCharactor;
 
   function showSelectCharactor(e) {
