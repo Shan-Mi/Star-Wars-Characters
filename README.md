@@ -37,10 +37,9 @@ Also please answer the following questions in the email:
 2. Would you do anything differently if you were to do it again?
 
 ## Solution
-1. Used Async and await to get and process data.
+1. Use Async and await to get and process data.
 
 2. Check API's JSON file's next property, use recursion to get all data.
-
 
 ```js
 const getCharacters = async () => {
@@ -74,5 +73,5 @@ const getCharacters = async () => {
 
 5. Added wiki-links for each film as a new feature.
 
-6. Used grid and flex for layout, `grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));` `font-size: clamp(14px, 3vw, 20px);` are some of those self-adaptive implements.
+6. Use grid and flex for layout, `grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));` `font-size: clamp(14px, 3vw, 20px);` are some of those self-adaptive implementations.
 ![](src/images/screenshot.png)
