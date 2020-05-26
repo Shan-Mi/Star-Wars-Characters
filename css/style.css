@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poller+One&display=swap");
 html {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   background-color: yellow;
   font-size: 10px;
   background: top/cover no-repeat url(https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80);
@@ -27,7 +27,7 @@ body {
 /* Typography */
 h1,
 h2 {
-  font-family: 'Cherry Swash', cursive;
+  font-family: "Cherry Swash", cursive;
   margin: 0;
   text-align: center;
 }
@@ -242,13 +242,13 @@ section p {
 }
 
 #sw-panel .characters-wrapper .character .name-container:hover::after {
-  content: 'click to show more info';
+  content: "click to show more info";
 }
 
 #sw-panel .characters-wrapper .character .name-container .name {
   color: white;
   font-size: 14px;
-  font-family: 'Poller One', cursive;
+  font-family: "Poller One", cursive;
 }
 
 #sw-panel .characters-wrapper .character .info-container {
@@ -258,14 +258,14 @@ section p {
   position: relative;
   height: 100%;
   width: 100%;
-  background: #BBBEB1;
+  background: #bbbeb1;
   color: #ccc;
   font-size: 11px;
   padding-top: 10px;
 }
 
 #sw-panel .characters-wrapper .character .info-container.hidden::before {
-  content: 'click to show more info';
+  content: "click to show more info";
   position: absolute;
   top: 50%;
 }
@@ -286,7 +286,7 @@ button:hover {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .showInfo {
@@ -309,7 +309,7 @@ button:hover {
 }
 
 .male {
-  background-color: #242A45;
+  background-color: #242a45;
 }
 
 .female {
@@ -325,7 +325,7 @@ button:hover {
 }
 
 .none {
-  background: #9FBECF;
+  background: #9fbecf;
 }
 
 .text {

@@ -1,19 +1,18 @@
 /* General */
-@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poller+One&display=swap");
 
-
-$maleColor: #242A45;
+$maleColor: #242a45;
 $femaleColor: #e55039;
 $naColor: #fad390;
 $hermaphroditeColor: #aaa69d;
 
-
 html {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   background-color: yellow;
   font-size: 10px;
-  background: top / cover no-repeat url(https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80);
+  background: top / cover no-repeat
+    url(https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80);
   background-attachment: fixed;
 }
 
@@ -35,7 +34,7 @@ body {
 
 h1,
 h2 {
-  font-family: 'Cherry Swash', cursive;
+  font-family: "Cherry Swash", cursive;
   margin: 0;
   text-align: center;
 }
@@ -85,7 +84,7 @@ aside {
   border-right: 5px solid black;
 }
 
-body>div {
+body > div {
   border: 5px solid black;
   display: flex;
 }
@@ -196,7 +195,8 @@ section p {
     width: 100%;
 
     .character {
-      background: url(https://source.unsplash.com/200x200/?star%20wars) rgba(245, 245, 245, 0.80);
+      background: url(https://source.unsplash.com/200x200/?star%20wars)
+        rgba(245, 245, 245, 0.8);
       border: 1px solid black;
       text-align: center;
       min-width: 150px;
@@ -217,13 +217,13 @@ section p {
         justify-content: center;
 
         &:hover::after {
-          content: 'click to show more info';
+          content: "click to show more info";
         }
 
         .name {
           color: white;
           font-size: 14px;
-          font-family: 'Poller One', cursive;
+          font-family: "Poller One", cursive;
         }
       }
 
@@ -232,14 +232,14 @@ section p {
         position: relative;
         height: 100%;
         width: 100%;
-        background: #BBBEB1;
+        background: #bbbeb1;
         color: #ccc;
         font-size: 11px;
         padding-top: 10px;
 
         &.hidden {
           &::before {
-            content: 'click to show more info';
+            content: "click to show more info";
             position: absolute;
             top: 50%;
           }
@@ -264,7 +264,7 @@ button:hover {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .showInfo {
@@ -301,7 +301,7 @@ button:hover {
 }
 
 .none {
-  background: #9FBECF;
+  background: #9fbecf;
 }
 
 .text {
@@ -313,6 +313,6 @@ button:hover {
   }
 }
 
-.colorDemonstration>* {
+.colorDemonstration > * {
   margin-top: 10px;
 }
