@@ -75,4 +75,4 @@ const getCharacters = async () => {
 5. Added wiki-links for each film as a new feature.
 
 6. Used grid and flex for layout, `grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));` `font-size: clamp(14px, 3vw, 20px);` are some of those self-adaptive implements.
-![](src/images/Screenshot_2020-05-26 Star Wars Characters For Fun.png)
+![](src/images/screenshot.png)
