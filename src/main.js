@@ -23,7 +23,6 @@ const getCharacters = async () => {
       getCharacters();
     }
     if (!charactersJson.next) {
-      // console.log("dead end");
       isThisEnd = true;
     }
   } catch (err) {
@@ -32,7 +31,6 @@ const getCharacters = async () => {
 
   if (isThisEnd) {
     drawCharacterArea(results);
-    // console.log(results);
   }
 };
 
@@ -42,8 +40,6 @@ function drawCharacterArea(results) {
   generateCharatersPanel(results);
 
   searchTermArea.addEventListener("keyup", (e) => {
-    // console.log(e.target.value.toLowerCase());
-    // console.log(results);
     const searchString = e.target.value.toLowerCase();
     let isThereAnyFound = false;
     filterResults = [];
@@ -138,7 +134,6 @@ charactersArea.addEventListener("click", (e) => {
     overlay.classList.remove("hidden");
     module.classList.remove("hidden");
 
-    // console.log(e.target.firstElementChild.innerText);
     results.forEach((result) => {
       if (result.name == e.target.firstElementChild.innerText) {
         let homeworld;
@@ -147,7 +142,6 @@ charactersArea.addEventListener("click", (e) => {
           try {
             const res = await fetch(`${result.homeworld}`);
             const resJson = await res.json();
-            // console.log(resJson.name);
             homeworld = resJson.name;
             let species = result.species != false ? result.species : "unknown";
             module.innerHTML = `

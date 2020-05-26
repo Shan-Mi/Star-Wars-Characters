@@ -35,3 +35,43 @@ Also please answer the following questions in the email:
 1. What parts did you struggle with and why?
 
 2. Would you do anything differently if you were to do it again?
+
+## Solution
+1. Used Async and await to get and process data.
+
+2. Check API's JSON file's next property, use recursion to get all data.
+
+
+```js
+const getCharacters = async () => {
+  let isThisEnd = false;
+  try {
+    const res = await fetch(`${rootURL}${i}`);
+    charactersJson = await res.json();
+    characters = await charactersJson.results;
+    results.push(characters);
+    results = results.flat();
+    if (charactersJson.next) {
+      i++;
+      getCharacters();
+    }
+    if (!charactersJson.next) {
+      isThisEnd = true;
+    }
+  } catch (err) {
+    console.log(err);
+  }
+
+  if (isThisEnd) {
+    drawCharacterArea(results);
+  }
+};
+```
+
+3. Use keyup as event handler for search function, and evoke same function to re-draw characters' panel.
+
+4. Use delegation for opening module card.
+
+5. Added wiki-links for each film as a new feature.
+
+6. Used grid and flex for layout, `grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));` `font-size: clamp(14px, 3vw, 20px);` are some of those self-adaptive implements.
