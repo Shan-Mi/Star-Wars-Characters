@@ -49,15 +49,11 @@ function drawCharacterArea(results) {
     filterResults = [];
     results.forEach((result) => {
       if (result.name.toLowerCase().includes(searchString)) {
-        // console.log(results.indexOf(result));
-        // console.log(result);
         filterResults.push(result);
-        // console.log(filterResults);
         isThereAnyFound = true;
         generateCharatersPanel(filterResults);
       } else if (!isThereAnyFound) {
         charactersArea.innerHTML = "";
-        // console.log("no found");
       }
     });
   });
@@ -132,3 +128,48 @@ function generateCharatersPanel(characters) {
 
   charactersArea.innerHTML += htmlString;
 }
+
+const characterCards = document.querySelectorAll(".character");
+const overlay = document.querySelector(".overlay");
+const module = document.querySelector(".module");
+
+charactersArea.addEventListener("click", (e) => {
+  if (e.target.matches("div.character")) {
+    overlay.classList.remove("hidden");
+    module.classList.remove("hidden");
+
+    // console.log(e.target.firstElementChild.innerText);
+    results.forEach((result) => {
+      if (result.name == e.target.firstElementChild.innerText) {
+        let homeworld;
+
+        (async () => {
+          try {
+            const res = await fetch(`${result.homeworld}`);
+            const resJson = await res.json();
+            // console.log(resJson.name);
+            homeworld = resJson.name;
+            let species = result.species != false ? result.species : "unknown";
+            module.innerHTML = `
+              <h2>Name: ${result.name}</h2>
+              <p class="module-text"><strong>Birth of Year</strong>: <i>${result.birth_year}</i></p>
+              <p class="module-text"><strong>Height</strong>: <i>${result.height}</i></p>
+              <p class="module-text"><strong>Hair Color</strong>: <i>${result.hair_color}</i></p>
+              <p class="module-text"><strong>Skin Color</strong>: <i>${result.skin_color}</i></p>
+              <p class="module-text"><strong>Eye Color</strong>: <i>${result.eye_color}</i></p>
+              <p class="module-text"><strong>Homeworld</strong>: <i><a href="${result.homeworld}">${homeworld}</a></i></p>
+              <p class="module-text"><strong>Species</strong>: <i><a href="${result.species}">${species}</a></i></p>
+            `;
+          } catch (err) {
+            console.log(err);
+          }
+        })();
+      }
+    });
+  }
+});
+
+overlay.addEventListener("click", () => {
+  overlay.classList.add("hidden");
+  module.classList.add("hidden");
+});

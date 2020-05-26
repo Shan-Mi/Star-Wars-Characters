@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
     integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+  <script async defer src="./main.js"></script>
 </head>
 
 <body>
@@ -36,11 +37,14 @@
           <p><span class="na">This color</span> is for N/A gender.</p>
           <p><span class="none">This color</span> is for no gender.</p>
         </div>
+
+        <p class="remind-info">Click space area of each card to see more detailed information.</p>
       </div>
     </aside>
     <main id="sw-panel">
-      <div class="characters-wrapper">
-      </div>
+      <div class="characters-wrapper"></div>
+      <div class="overlay hidden"></div>
+      <div class="module hidden"></div>
     </main>
   </div>
   <footer>
@@ -49,8 +53,8 @@
       <p class="date"></p>
     </div>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
-  <script async defer src="./main.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script> -->
+
 </body>
 
 </html>
